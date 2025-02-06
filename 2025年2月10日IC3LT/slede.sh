@@ -8,14 +8,6 @@ CONFIG_FILE="config.txt"
 DEFAULT_PROMPT="次のスライドに進むには Enter キーを押してください..."
 DEFAULT_END_MESSAGE="すべてのプレゼンテーションが終了しました。このプレゼンテーションはbash-presentationで作成されました。"
 
-# 設定ファイル読み込み処理
-if [[ -f "$CONFIG_FILE" ]]; then
-    source "$CONFIG_FILE"
-else
-    SLIDE_PROMPT="$DEFAULT_PROMPT"
-    SLIDE_END_MESSAGE="$DEFAULT_END_MESSAGE"
-fi
-
 # 指定したディレクトリが存在するか確認
 if [[ ! -d "$SLIDE_DIR" ]]; then
     echo "エラー: スライド用ディレクトリ '$SLIDE_DIR' が見つかりません。"
